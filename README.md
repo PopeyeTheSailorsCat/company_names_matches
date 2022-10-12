@@ -11,6 +11,7 @@ During the operation of the service, the problem of matching is solved
 * db - Contains code related to the operation of the company database
 * dev - Contains the code that was used during the development of the service
 
+
 ## Project RoadMap
 At this stage, the expected development path looks like this: 
 
@@ -49,3 +50,7 @@ Splitting a team:
 1) Dmitry  - Manager, Organization of the team's work, etc...
 2) Pavel - Processing text into vectors, comparing vectors. Description in the README
 3) Margarita - Data processing, Description of processing in README
+
+
+## Original data
+You can find original data by path data/train.csv
