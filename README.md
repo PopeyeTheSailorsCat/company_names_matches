@@ -11,6 +11,8 @@ During the operation of the service, the problem of matching is solved
 * db - Contains code related to the operation of the company database
 * dev - Contains the code that was used during the development of the service
 
+## Project architecture
+Through the written interface, a request in the form of a company name is submitted to the program. The company name passes through the pre-trained Bert and is translated into a vector representation. We have built a database of company names and their instances on the training dataset. Vectors are matched in the database with the vector of the received company name. If a match is found, other names of this company are displayed. Otherwise, it is reported that no work has been carried out with such a company. A request is made to the user for permission to add this company to the database.
 
 ## Project RoadMap
 At this stage, the expected development path looks like this: 
