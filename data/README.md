@@ -1,3 +1,6 @@
+All data in the link:
+<br>https://drive.google.com/drive/folders/1jgBJvnyaFJrMETpaaEqpSWwnVG44cgMn?usp=sharing
+
 ## Original data:  
 train.csv
 
