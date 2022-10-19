@@ -47,6 +47,12 @@ FORMAT: u_id, name, vector, Id_instance <- the universal designation of the comp
 
 6) Make a startup interface
 
+## Run program
+To run program use terminal crom project root and write:
+```commandline
+python app/match_names.py yours_company_name
+```
+
 ## Team
 Splitting a team:
 1) Dmitry  - Manager, Organization of the team's work, etc...
