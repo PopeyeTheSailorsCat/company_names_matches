@@ -47,3 +47,5 @@ This file:
 <li>append names of company to new file and detect language</li>
 <li>create file with only english samples</li>
 <li>remove quotes</li>
+<center>
+<img src="errors.png" alt="Remove Custom Code errors"></center>
