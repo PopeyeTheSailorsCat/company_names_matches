@@ -42,8 +42,8 @@ Quotes removed in the names, commas left
 File name: Clear_data.ipynb
 
 This file:
-<li>remove column 'pair_id'</li>;
-<li>remove all errors like the picture below</li>;
-<li>append names of company to new file and detect language</li>;
-<li>create file with only english samples</li>;
-<li>remove quotes</li>.
+<li>remove column 'pair_id'</li>
+<li>remove all errors like the picture below</li>
+<li>append names of company to new file and detect language</li>
+<li>create file with only english samples</li>
+<li>remove quotes</li>
