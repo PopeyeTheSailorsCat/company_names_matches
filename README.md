@@ -48,7 +48,9 @@ FORMAT: u_id, name, vector, Id_instance <- the universal designation of the comp
 6) Make a startup interface
 
 ## Run program
-To run program use terminal crom project root and write:
+1) Setup db. Check db/README.md
+
+2) To run program use terminal from project root and write:
 ```commandline
 python app/match_names.py yours_company_name
 ```
