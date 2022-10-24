@@ -1,5 +1,6 @@
 import pandas as pd
 from experiments.preprocess import preproc, stopwords
+from qdrant_client.http.models import models
 
 
 class DataBaseClient:
@@ -11,7 +12,6 @@ class DataBaseClient:
         # self.names = .merge(df_emb[['name', 'emb']], how='left', left_on='Names', right_on='name')
         self.names = self.names.drop(columns=['languages_langdetect'])
         self.names = self.names.rename({'Names': 'original_name', 'name_preproc': 'preprocessed_name'}, axis=1)
-        print(self.names.head())
 
     def get_collection(self):
         return self.client.get_collection(self.table)
@@ -30,10 +30,24 @@ class DataBaseClient:
             return 0, search['original_name'][0]
 
         preprocess_name = preproc(company_name, stopwords)
-        print(preprocess_name)
         search = self.names[self.names['preprocessed_name'] == preprocess_name]
-        print(search)
         if not search.empty:
             return 1, search['original_name'][0]
 
         return 2, ""
+
+    def search_in_qdrant_with_model_filtering(self, vector, original_name, limit, threshold):
+        return self.client.search(
+            collection_name=self.table,
+            query_vector=vector,
+            query_filter=models.Filter(
+                must_not=[
+                    models.FieldCondition(
+                        key="original_name",
+                        match=models.MatchValue(value=original_name)
+                    ),
+                ]
+            ),
+            limit=limit,
+            offset=0
+        )
