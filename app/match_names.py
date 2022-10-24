@@ -1,6 +1,7 @@
 import argparse
 import logging
 import sys
+import db.data_base as data_base
 
 logger = logging.getLogger("MatchNames")
 # logger.setLevel(logging.INFO)
@@ -12,12 +13,13 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
 
+
 def get_db():
-    return []
+    return data_base.get_qdrant_client_()
 
 
-def find_in_db(db, company_name):
-    return []
+def find_in_db(db_client, company_name):
+    return db_client.check_for_name_in_db(company_name)
 
 
 def match_vectors(vector, vector_db):
@@ -55,19 +57,23 @@ def search_company_instance(company_name):
 
 
 def run_company_matches(company_name):
-    db = get_db()
+    db_client = get_db()
+    logger.info(db_client.get_collection())
+
+    logger.info(db_client.get_point_by_id([1]))
     logger.info("Checking company existence in db")
-    existed_in_db = find_in_db(db, company_name)
+    status, company = find_in_db(db_client, company_name)
 
-    if existed_in_db:
-        logger.info("Find this company in db. Other names:")
-        other_names = get_company_instance_names(existed_in_db)
-        for name in other_names:
-            logger.info(name)
-
+    if status == 0:
+        logger.info(f"Find this company in db. We worked with company '{company}'. They don't change company name.")
         return 1
+    elif status == 1:
+        logger.info(f"Don't find exact company in db. However, find close one by name:'{company}'. Starting matching "
+                    f"process to search better.")
+        return 1
+    else:
+        logger.info(f"Dont find company '{company_name}' in db. Starting matching process")
 
-    logger.info(f"Previous company's dont use name {company_name}. Starting matching process")
     search_company_instance(company_name)
 
 
