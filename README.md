@@ -7,6 +7,7 @@ During the operation of the service, the problem of matching is solved
 ## Project structure
 * data - Contains the source data and the datasets obtained during processing 
 * models - Contains models used for text processing
+* experiments - contains notebooks with test processing experiments
 * app - Contains the code responsible for the operation of the service
 * db - Contains code related to the operation of the company database
 * dev - Contains the code that was used during the development of the service
