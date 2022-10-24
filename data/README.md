@@ -1,6 +1,18 @@
 All data in the link:
 <br>https://drive.google.com/drive/folders/1jgBJvnyaFJrMETpaaEqpSWwnVG44cgMn?usp=sharing
 
+## Data description
+All parqet files have suffixes depending on pretrained embedding model used.
+Here are suffixes definition:
+1 - distiluse-base-multilingual-cased-v2
+2 - all-MiniLM-L6-v2
+3 - all-MiniLM-L12-v2
+4 - paraphrase-MiniLM-L6-v2
+5 - paraphrase-MiniLM-L12-v2
+6 - all-mpnet-base-v2
+7 - LaBSE
+8 - paraphrase-multilingual-MiniLM-L12-v2
+
 ## Original data:  
 train.csv
 
