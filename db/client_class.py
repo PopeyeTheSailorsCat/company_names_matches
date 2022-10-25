@@ -57,7 +57,7 @@ class DataBaseClient:
         resp = []
         while score > threshold and i < len(qdr_resp):
             resp.append(qdr_resp[i])
-            score = qdr_resp[i].result['score']
+            score = qdr_resp[i].score
             i += 1
 
         return resp
