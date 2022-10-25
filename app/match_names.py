@@ -24,8 +24,12 @@ def find_in_db(db_client, company_name):
 
 
 def print_company_instance_names(results):
+    if not results:
+        logger.info("With this threshold we dont find matching company's. Try lowering threshold.")
     for result in results:
-        logger.info(result)
+        name = result.payload["original_name"]
+        score = result.score
+        logger.info(f"We find: '{name}'. Matching score is: {round(score, 4)}")
 
 
 def search_company_instance(company_name, db_client, threshold, limit):
@@ -77,7 +81,7 @@ if __name__ == "__main__":
                         help='Matching threshold, between 0 and 1, where = 1 means total matching.')
 
     parser.add_argument('--limit', '-l', type=int, default=10,
-                        help='Limit of number for search names',dest='limit')
+                        help='Limit of number for search names', dest='limit')
 
     args = parser.parse_args()
     # print(args.company_name)
