@@ -6,7 +6,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.http import models as rest
 from qdrant_client.http.models import models as qdrant_models
 from db.client_class import DataBaseClient
-import config
+from db import config
 
 
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     vectors = embeddings
     payload = df_names[['original_name', 'preprocessed_name']].to_dict(orient='records')
     ids = df_names.index.values.tolist()
-    col_name = COL_NAME
+    col_name = config.COL_NAME
     vec_shape = vectors.shape[1]
     bs = 1024
     col = create_collection_and_upload(vectors, payload, ids, col_name, vec_shape, bs)
