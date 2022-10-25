@@ -59,7 +59,11 @@ python app/match_names.py yours_company_name
 ## Methods
 The task to find same company based on another company input can be factorized as a matching problem. Basically it is similarity search between objects that represent companies. We use pretrained sentence-transformers models as base embedding models to represent companies in a common vector space. 
 Metric Learning is a common approach for matching task. 
-We use Similarity Learning where model is trained to learn similarity between objects by passing positive and negative objects to it. Our main tool for similarity learning is Quaterion. TODO Explain how it works.....
+We use Similarity Learning where model is trained to learn similarity between objects by passing positive and negative objects to it. Our main tool for similarity learning is Quaterion. Similarity model acts like an Encoder, which consists of other encoders, and a Head Layer, which combines outputs of encoder components. This head layer redefines weights according to positive and negative input samples. 
+As a storage we use Vector Search Engine called Qdrant. You can get it run with 2 commands:
+
+    docker pull qdrant/qdrant
+    docker run --name qdrant -d -p 6333:6333 --net=bridge qdrant/qdrant
 
 
 ## Evaluation
@@ -71,7 +75,7 @@ Table 1. Precision@1 with different methods.
 | Qdrant + Preprocessed | 0.4569 | 0.6183 |  |  |  |  |  |
 | Qdrant + Quanterion Preprocessed |  | 0.6205 |  |  |  |  |  |
 
-Based on table 1 we can conclude that processing is crucial step in this task as it dramatically increases quality of the model as well as fine tuning with similarity learning.
+Based on table 1 we can conclude that processing is crucial step in this task as it dramatically increases quality of the model as well as fine tuning with similarity learning. Even though fine-tuning didn't gave us much of quality improvement there are a lot of room for future work and adjustments to similarity model.
 
 
 ## Team
