@@ -54,7 +54,7 @@ FORMAT: u_id, name, vector, Id_instance <- the universal designation of the comp
 3) Setup models. Check for this models/README.md
 4) To run program use terminal from project root and write:
 ```commandline
-python app/match_names.py yours_company_name
+python -m app.match_names "yours_company_name" threshold(float) [limit(int)]
 ```
 
 ## Methods
