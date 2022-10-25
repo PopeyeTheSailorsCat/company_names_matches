@@ -49,9 +49,10 @@ FORMAT: u_id, name, vector, Id_instance <- the universal designation of the comp
 6) Make a startup interface
 
 ## Run program
-1) Setup db. Check for this db/README.md
-2) Setup models. Check for this models/README.md
-3) To run program use terminal from project root and write:
+1) pip install -r requirements.txt
+2) Setup db. Check for this db/README.md
+3) Setup models. Check for this models/README.md
+4) To run program use terminal from project root and write:
 ```commandline
 python app/match_names.py yours_company_name
 ```
