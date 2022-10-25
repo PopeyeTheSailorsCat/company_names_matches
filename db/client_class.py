@@ -37,7 +37,7 @@ class DataBaseClient:
         return 2, ""
 
     def search_in_qdrant_with_model_filtering(self, vector, original_name, limit, threshold):
-        return self.client.search(
+        qdr_resp = self.client.search(
             collection_name=self.table,
             query_vector=vector,
             query_filter=models.Filter(
@@ -51,3 +51,13 @@ class DataBaseClient:
             limit=limit,
             offset=0
         )
+
+        score = 0
+        i = 0
+        resp = []
+        while score > threshold and i < len(qdr_resp):
+            resp.append(qdr_resp[i])
+            score = qdr_resp[i].result['score']
+            i += 1
+
+        return resp
