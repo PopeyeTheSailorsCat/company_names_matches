@@ -1,5 +1,5 @@
 # Data base setup.
-1) Install .parquet files from:
+1) Install files from:
 <br>https://drive.google.com/drive/folders/1jgBJvnyaFJrMETpaaEqpSWwnVG44cgMn?usp=sharing  
 To /data folder
 2) Install Docker Desktop.
