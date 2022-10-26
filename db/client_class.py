@@ -52,13 +52,6 @@ class DataBaseClient:
             offset=0
         )
 
-        score = 0
-        i = 0
-        resp = []
-        while score > threshold and i < len(qdr_resp):
-            resp.append(qdr_resp[i])
-            score = qdr_resp[i].score
-            i += 1
+        resp = [elem for elem in qdr_resp if elem.score >= threshold]
 
         return resp
-
