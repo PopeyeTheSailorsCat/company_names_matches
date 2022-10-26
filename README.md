@@ -60,7 +60,9 @@ python -m app.match_names "yours_company_name" threshold(float) [limit(int)]
 ## Methods
 The task to find same company based on another company input can be factorized as a matching problem. Basically it is similarity search between objects that represent companies. We use pretrained sentence-transformers models as base embedding models to represent companies in a common vector space. 
 Metric Learning is a common approach for matching task. 
+
 We use Similarity Learning where model is trained to learn similarity between objects by passing positive and negative objects to it. Our main tool for similarity learning is Quaterion. Similarity model acts like an Encoder, which consists of other encoders, and a Head Layer, which combines outputs of encoder components. This head layer redefines weights according to positive and negative input samples. 
+
 As a storage we use Vector Search Engine called Qdrant. You can get it run with 2 commands:
 
     docker pull qdrant/qdrant
