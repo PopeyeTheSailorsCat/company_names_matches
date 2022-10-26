@@ -74,7 +74,7 @@ Table 1. Precision@1 with different methods.
 |--|--|--|--|--|--|--|--|--|
 | Qdrant + Not Preprocessed | 0.3256 | 0.5746 | 0.5860 | 0.5817 | 0.5839 |  |  |
 | Qdrant + Preprocessed | 0.4569 | 0.6183 | 0.6233 | 0.6248 | 0.6162 |  |  |
-| Qdrant + Quanterion Preprocessed |  | 0.6205 |  | 0.6219 |  |  |  |
+| Qdrant + Quanterion Preprocessed |  | 0.6205 |  | 0.6219 | 0.6133 |  |  |
 
 Based on table 1 we can conclude that processing is crucial step in this task as it dramatically increases quality of the model as well as fine tuning with similarity learning. Even though fine-tuning didn't gave us much of quality improvement there are a lot of room for future work and adjustments to similarity model.
 
