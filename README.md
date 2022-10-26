@@ -71,9 +71,9 @@ We evaluate our methods with basic retrieval metric called Precision@1.
 Table 1. Precision@1 with different methods.
 | Method\Model | distiluse-base-multilingual-cased-v2 | all-MiniLM-L6-v2 | all-MiniLM-L12-v2 | paraphrase-MiniLM-L6-v2 | paraphrase-MiniLM-L12-v2 | all-mpnet-base-v2 | LaBSE | paraphrase-multilingual-MiniLM-L12-v2 |
 |--|--|--|--|--|--|--|--|--|
-| Qdrant + Not Preprocessed | 0.3256 | 0.5746 |  |  |  |  |  |
-| Qdrant + Preprocessed | 0.4569 | 0.6183 |  |  |  |  |  |
-| Qdrant + Quanterion Preprocessed |  | 0.6205 |  |  |  |  |  |
+| Qdrant + Not Preprocessed | 0.3256 | 0.5746 | 0.5860 | 0.5817 | 0.5839 |  |  |
+| Qdrant + Preprocessed | 0.4569 | 0.6183 | 0.6233 | 0.6248 | 0.6162 |  |  |
+| Qdrant + Quanterion Preprocessed |  | 0.6205 |  | 0.6219 |  |  |  |
 
 Based on table 1 we can conclude that processing is crucial step in this task as it dramatically increases quality of the model as well as fine tuning with similarity learning. Even though fine-tuning didn't gave us much of quality improvement there are a lot of room for future work and adjustments to similarity model.
 
